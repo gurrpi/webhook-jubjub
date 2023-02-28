@@ -15,7 +15,8 @@ jobs:
 
     steps:
       - run: |
-          echo "hi: $TEST"
+          echo "hi: ${{ inputs.logLevel }}"
+
       - name: send telegram message on push
         uses: appleboy/telegram-action@v0.1.1
         with:
