@@ -2,6 +2,9 @@ name: TG-push
 
 on:
   workflow_dispatch:
+    inputs:
+      test:
+
 
 
 jobs:
@@ -10,6 +13,8 @@ jobs:
 
 
     steps:
+      - run: |
+          echo "hi: $TEST"
       - name: send telegram message on push
         uses: appleboy/telegram-action@v0.1.1
         with:
