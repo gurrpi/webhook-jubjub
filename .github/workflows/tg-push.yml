@@ -34,7 +34,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            🔔 New 🛑 Blocked Item
+            Item Status Change: 🛑 Blocked
             
             ```
             title: ${{ inputs.title }}
@@ -43,5 +43,4 @@ jobs:
             UpdatedAt: ${{ inputs.updatedAt }}
             UpdatedBy: ${{ inputs.sender }}
             ```
-            
             See the item: https://github.com/orgs/org-test-gurrpi/projects/2/views/10?pane=issue&itemId=${{ inputs.itemId }}
