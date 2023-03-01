@@ -36,11 +36,16 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ github.actor }} created commit:
-            Commit message: ${{ github.event.commits[0].message }}
-            
-            Repository: ${{ github.repository }}
-            
-            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
+            $sender changed status to '🛑 Blocked'
 
+            $createdAt
+            $updatedAt
+            title: $title
+            $body
 
+        env:
+          title: ${{ inputs.title }}
+          body: ${{ inputs.body }}
+          createdAt: ${{ inputs.createdAt }}
+          updatedAt: ${{ inputs.updatedAt }}
+          sender: ${{ inputs.sender }}
