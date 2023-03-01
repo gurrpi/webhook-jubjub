@@ -4,11 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       title:
-      body:
       createdAt:
       updatedAt:
       sender:
-
 
 
 jobs:
@@ -19,13 +17,11 @@ jobs:
     steps:
       - run: |
           echo "hi: $title"
-          echo "hi: $body"
           echo "hi: $createdAt"
           echo "hi: $updatedAt"
           echo "hi: $sender"
         env:
           title: ${{ inputs.title }}
-          body: ${{ inputs.body }}
           createdAt: ${{ inputs.createdAt }}
           updatedAt: ${{ inputs.updatedAt }}
           sender: ${{ inputs.sender }}
@@ -36,16 +32,14 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            $sender changed status to '🛑 Blocked'
+            ${{ inputs.sender }} changed status to '🛑 Blocked'
 
-            $createdAt
-            $updatedAt
-            title: $title
-            $body
+            ${{ inputs.createdAt }}
+            ${{ inputs.updatedAt }}
+            title: ${{ inputs.title }}
 
         env:
           title: ${{ inputs.title }}
-          body: ${{ inputs.body }}
           createdAt: ${{ inputs.createdAt }}
           updatedAt: ${{ inputs.updatedAt }}
           sender: ${{ inputs.sender }}
