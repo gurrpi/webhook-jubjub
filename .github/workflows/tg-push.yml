@@ -33,12 +33,13 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ inputs.sender }} changed the following item's status to '🛑 Blocked'
+            **`${{ inputs.sender }}` changed the following item's status to '🛑 Blocked'**
             
-            - Item title
-            ${{ inputs.title }}
+            ```
+            title: ${{ inputs.title }}
 
             CreateAt: ${{ inputs.createdAt }}
             UpdatedAt: ${{ inputs.updatedAt }}
+            ```
             
             See the item: https://github.com/orgs/org-test-gurrpi/projects/2/views/10?pane=issue&itemId=${{ inputs.itemId }}
