@@ -7,6 +7,7 @@ on:
       createdAt:
       updatedAt:
       sender:
+      itemId:
 
 
 jobs:
@@ -33,15 +34,11 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ inputs.sender }} changed the following item's status to '🛑 Blocked'
-            - Item title:
+            
+            - Item title
             ${{ inputs.title }}
 
             CreateAt: ${{ inputs.createdAt }}
             UpdatedAt: ${{ inputs.updatedAt }}
             
-
-        env:
-          title: ${{ inputs.title }}
-          createdAt: ${{ inputs.createdAt }}
-          updatedAt: ${{ inputs.updatedAt }}
-          sender: ${{ inputs.sender }}
+            See the item: https://github.com/orgs/org-test-gurrpi/projects/2/views/10?pane=issue&itemId=${{ inputs.itemId }}
