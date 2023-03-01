@@ -37,7 +37,7 @@ jobs:
             Item Status Change: 🛑 Blocked
             
             ```
-            title: ${{ inputs.title }}
+            ${{ inputs.title }}
 
             CreateAt: ${{ inputs.createdAt }}
             UpdatedAt: ${{ inputs.updatedAt }}
