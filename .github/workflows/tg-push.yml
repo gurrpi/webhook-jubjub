@@ -34,7 +34,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            `${{ inputs.sender }}` **changed the following item's status to '🛑 Blocked'**
+            `${{ inputs.sender }}` **changed the following item's status to** 🛑 Blocked
             
             ```
             title: ${{ inputs.title }}
