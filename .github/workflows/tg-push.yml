@@ -32,11 +32,13 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ inputs.sender }} changed status to '🛑 Blocked'
+            ${{ inputs.sender }} changed the following item's status to '🛑 Blocked'
+            - Item title:
+            ${{ inputs.title }}
 
-            ${{ inputs.createdAt }}
-            ${{ inputs.updatedAt }}
-            title: ${{ inputs.title }}
+            CreateAt: ${{ inputs.createdAt }}
+            UpdatedAt: ${{ inputs.updatedAt }}
+            
 
         env:
           title: ${{ inputs.title }}
