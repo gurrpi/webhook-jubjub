@@ -1,0 +1,34 @@
+[
+  {
+    "id": "hook",
+    "execute-command": "/config/run/trigger.sh",
+    "command-working-directory": "/config",
+    "response-message": "I got the payload!",
+    "response-headers":
+    [
+      {
+        "name": "Access-Control-Allow-Origin",
+        "value": "*"
+      }
+    ],
+    "pass-arguments-to-command":
+    [
+      {
+        "source": "payload",
+        "name": "projects_v2_item.node_id"
+      },
+      {
+        "source": "payload",
+        "name": "sender.login"
+      },
+      {
+        "source": "payload",
+        "name": "projects_v2_item.updated_at"
+      },
+      {
+        "source": "payload",
+        "name": "projects_v2_item.id"
+      }
+    ]
+  }
+]

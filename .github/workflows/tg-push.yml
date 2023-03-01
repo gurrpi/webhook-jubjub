@@ -14,19 +14,8 @@ jobs:
   build:
     runs-on: ubuntu-22.04
 
-
+    # TODO: change item link to refer Jubjub board
     steps:
-      - run: |
-          echo "hi: $title"
-          echo "hi: $createdAt"
-          echo "hi: $updatedAt"
-          echo "hi: $sender"
-        env:
-          title: ${{ inputs.title }}
-          createdAt: ${{ inputs.createdAt }}
-          updatedAt: ${{ inputs.updatedAt }}
-          sender: ${{ inputs.sender }}
-
       - name: send telegram message on push
         uses: appleboy/telegram-action@v0.1.1
         with:
