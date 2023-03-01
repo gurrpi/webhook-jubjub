@@ -3,8 +3,11 @@ name: TG-push
 on:
   workflow_dispatch:
     inputs:
-      test:
-        default: 'default'
+      title:
+      body:
+      createdAt:
+      updatedAt:
+      sender:
 
 
 
@@ -15,9 +18,17 @@ jobs:
 
     steps:
       - run: |
-          echo "hi: $TEST"
+          echo "hi: $title"
+          echo "hi: $body"
+          echo "hi: $createdAt"
+          echo "hi: $updatedAt"
+          echo "hi: $sender"
         env:
-          TEST: ${{ inputs.test }}
+          title: ${{ inputs.title }}
+          body: ${{ inputs.body }}
+          createdAt: ${{ inputs.createdAt }}
+          updatedAt: ${{ inputs.updatedAt }}
+          sender: ${{ inputs.sender }}
 
       - name: send telegram message on push
         uses: appleboy/telegram-action@v0.1.1
