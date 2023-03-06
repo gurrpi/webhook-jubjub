@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export GH_TOKEN="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"
 #Proceed only when status field has changed
 changed_field_node_id=$5
 
