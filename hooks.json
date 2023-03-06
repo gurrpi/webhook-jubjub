@@ -28,6 +28,10 @@
       {
         "source": "payload",
         "name": "projects_v2_item.id"
+      },
+      {
+        "source": "payload",
+        "name": "changes.field_value.field_node_id"
       }
     ]
   }
