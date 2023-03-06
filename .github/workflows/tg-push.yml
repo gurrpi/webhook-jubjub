@@ -8,6 +8,7 @@ on:
       updatedAt:
       sender:
       itemId:
+      fieldValue:
 
 
 jobs:
@@ -23,7 +24,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            Item Status Change: 🛑 Blocked
+            Item Status Change: ${{ inputs.fieldValue }}
             
             ```
             ${{ inputs.title }}
